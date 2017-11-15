@@ -35,6 +35,17 @@
 	.hej{
 		color:red;
 	}
+
+	#david{
+		width:400px;
+		height: 400px;
+		right: 0;
+		bottom: -50px;
+		position: absolute;
+		
+		background-size: 50%;
+		background-repeat: no-repeat;
+	}
 	
 
 		</style>
@@ -46,6 +57,10 @@
 		</div>
 
 				<h1></h1>
+
+		<div id="david">
+
+		</div>
 
 	<script>
 		
@@ -65,8 +80,9 @@
 
 					let div = document.getElementsByTagName("div")[0];
 
-					div.innerHTML = i + " min och " + y + " sekunder!"
+					div.innerHTML = i + " min och " + y + " sekunder!";
 
+					let david = document.getElementById("david")
 					
 					
 					if(y === 0){
@@ -77,7 +93,10 @@
 					if(i<0){
 						div.innerHTML = "Rasten är slut. Time to CODE!";
 						div.style.color = "white";
-						div.style.backgroundColor = "red"
+						div.style.backgroundColor = "red";
+
+						david.style.background ="url('david.png')";
+						
 						return "hej"
 					}
 
@@ -99,6 +118,7 @@
 						h1.innerHTML = "SLUUUT!!!!!!"
 						h1.className = "hej";
 						div.style.background = "red"
+
 					}
 
 
