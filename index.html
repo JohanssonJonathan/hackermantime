@@ -33,7 +33,8 @@
 	}
 
 	.hej{
-		color:red;
+		color:white;
+		background: red;
 	}
 
 	#david{
@@ -46,12 +47,43 @@
 		background-size: 50%;
 		background-repeat: no-repeat;
 	}
+
+	#form {
+		text-align: center;
+		color:white;
+	}
 	
+	#lol{
+		padding:5px;
+		font-size: 1.2em;
+		width: 40px;
+	}
+
+	label {
+		background: white;
+		color:black;
+		padding:10px;
+		border-radius: 2px;
+	}
+
+	h2{
+		text-align: center;
+		color:white;
+		font-size: 2em;
+	}
 
 		</style>
 	
 </head>
 <body>
+
+	<h2>Hur lång rast vill du ha?</h2>
+
+	<form id="form">
+    <input type="text" placeholder="ex. 2" id="lol">
+	<label for="lol">Klicka här</label>
+</form>
+
 		<div> 
 
 		</div>
@@ -63,11 +95,83 @@
 		</div>
 
 	<script>
+
+
+
+		let inn = document.getElementById("lol");
+		let label = document.getElementsByTagName("label")[0];
+		let ny = "";
+		label.addEventListener("click", function(e){
+				ny = inn.value;
+				console.log(ny)
+
+				let h = document.getElementsByTagName("input")[0];
 		
+
 		let h1 = document.getElementsByTagName('h1')[0];
 		console.log(h1)
 
-		let hej = prompt("Hur länge ska vi vara på rast?", "Skriv bara minuter!");
+
+		let nummer = Number(ny)
+		let i=nummer-1
+		
+		let y = 59;
+			setInterval(function(){ 
+
+
+							let clock = new Date();
+
+					let div = document.getElementsByTagName("div")[0];
+
+					div.innerHTML = i + " min och " + y + " sekunder!";
+
+					let david = document.getElementById("david")
+					
+					
+					if(y === 0){
+					i--
+						y= 59;
+					}
+					y--;
+					if(i<0 || isNaN(ny)){
+						div.innerHTML = "Rasten är slut. Time to CODE!";
+						div.style.color = "white";
+						div.style.backgroundColor = "red";
+
+						david.style.background ="url('david.png')";
+						
+						return "hej"
+					}
+
+					if(i===1 && y === 50){
+						h1.innerHTML = "Snart är rasten slut";
+						h1.className = "hej";
+					}else if(i === 0 && y === 50 ){
+						h1.innerHTML = "Snart kommer David in"
+						h1.className = "hej";
+					}else if(i ===0 && y === 10){
+
+						h1.innerHTML = "SKYYYNDAAAA DIG!!!!"
+						h1.className = "hej";
+					}
+					else if(i ===0 && y=== -1){
+						h1.innerHTML = "SLUUUT!!!!!!"
+						h1.className = "hej";
+
+					}
+
+
+				 },1000);
+		
+
+		})
+		/*
+		let h = document.getElementsByTagName("input")[0];
+		
+
+		let h1 = document.getElementsByTagName('h1')[0];
+		console.log(h1)
+
 
 		let nummer = Number(hej)
 		let i=nummer-1
@@ -90,7 +194,7 @@
 						y= 59;
 					}
 					y--;
-					if(i<0){
+					if(i<0 || isNaN(hej)){
 						div.innerHTML = "Rasten är slut. Time to CODE!";
 						div.style.color = "white";
 						div.style.backgroundColor = "red";
@@ -125,7 +229,7 @@
 				 },1000);
 		
 
-
+	*/
 	</script>
 </body>
 </html>
