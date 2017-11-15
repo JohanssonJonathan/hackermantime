@@ -14,7 +14,11 @@
 		flex-direction: column;
 		font-family: monospace;
 
-		background: #140E25;
+		background: url("PhotoFunia-1510743157.jpg"), #140413;
+		background-position:center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+	margin:0;
 
 	}
 
@@ -28,6 +32,7 @@
 		text-align: center;
 		font-size: 5em;
 		color:white;
+		margin:0;
 	}
 	img {
 		margin: 0 auto;
@@ -39,11 +44,12 @@
 	
 </head>
 <body>
-		<h1>Hackerman time</h1>
-		<img src="hackermantime.jpg" alt="hackerman"/>
 		<div> 
 
 		</div>
+
+				<h1></h1>
+
 	<script>
 		
 		let h1 = document.getElementsByTagName('h1')[0];
@@ -76,9 +82,9 @@
 						return "hej"
 					}
 
-					if(i===0 && y === 50){
-						h1.innerHTML = "Snart är rasten slut heheh"
-					}else if(i === 0 && y === 30 ){
+					if(i===1 && y === 50){
+						h1.innerHTML = "Snart är rasten slut"
+					}else if(i === 0 && y === 50 ){
 						h1.innerHTML = "Snart kommer David in"
 					}else if(i ===0 && y === 10){
 
