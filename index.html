@@ -9,36 +9,33 @@
 	<style>
 	body{
 		height: 100vh;
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
+
 		font-family: monospace;
 
 		background: url("PhotoFunia-1510743157.jpg"), #140413;
 		background-position:center;
 		background-size: 100%;
 		background-repeat: no-repeat;
-	margin:0;
 
 	}
 
 	h1{
 		color:white;
 		text-align: center;
-		margin:0;
+		
 	}
 
 	div{
 		text-align: center;
 		font-size: 5em;
 		color:white;
-		margin:0;
+		margin:50px;
 	}
-	img {
-		margin: 0 auto;
-		width:400px;
-		text-align: center;
+
+	.hej{
+		color:red;
 	}
+	
 
 		</style>
 	
@@ -78,20 +75,30 @@
 					}
 					y--;
 					if(i<0){
-						div.innerHTML = "SLUUUUUUT PÅ RAST! In med er ungjävlar!";
+						div.innerHTML = "Rasten är slut. Time to CODE!";
+						div.style.color = "white";
+						div.style.backgroundColor = "red"
 						return "hej"
 					}
 
 					if(i===1 && y === 50){
-						h1.innerHTML = "Snart är rasten slut"
+						h1.innerHTML = "Snart är rasten slut";
+						h1.className = "hej";
+						div.style.background = "red"
 					}else if(i === 0 && y === 50 ){
 						h1.innerHTML = "Snart kommer David in"
+						h1.className = "hej";
+						div.style.background = "red"
 					}else if(i ===0 && y === 10){
 
 						h1.innerHTML = "SKYYYNDAAAA DIG!!!!"
+						h1.className = "hej";
+						div.style.background = "red"
 					}
 					else if(i ===0 && y=== -1){
 						h1.innerHTML = "SLUUUT!!!!!!"
+						h1.className = "hej";
+						div.style.background = "red"
 					}
 
 
