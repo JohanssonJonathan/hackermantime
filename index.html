@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jonathan Johansson</title>
+
+	<style>
+	body{
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		font-family: arial;
+
+		background: #463CD0;
+
+	}
+
+	h1{
+		color:white;
+		text-align: center;
+		margin:0;
+	}
+
+	div{
+		text-align: center;
+		font-size: 5em;
+		color:white;
+	}
+	img {
+		margin: 0 auto;
+		width:400px;
+		text-align: center;
+	}
+
+		</style>
+	
+</head>
+<body>
+		<h1>Hackerman time</h1>
+		<img src="http://i0.kym-cdn.com/entries/icons/original/000/021/807/4d7.png" alt="hackerman"/>
+		<div> 
+
+		</div>
+	<script>
+		
+		let h1 = document.getElementsByTagName('h1')[0];
+		console.log(h1)
+
+		let hej = prompt("Hur länge ska vi vara på rast?");
+
+		let nummer = Number(hej)
+		let i=nummer-1
+		
+		let y = 59;
+			setInterval(function(){ 
+
+
+							let clock = new Date();
+
+					let div = document.getElementsByTagName("div")[0];
+
+					div.innerHTML = i + " min och " + y + " sekunder!"
+
+					
+					
+					if(y === 0){
+					i--
+						y= 59;
+					}
+					y--;
+					if(i<0){
+						div.innerHTML = "SLUUUUUUT PÅ RAST! In med er ungjävlar!";
+						return "hej"
+					}
+
+					if(i===0 && y === 50){
+						h1.innerHTML = "Snart är rasten slut heheh"
+					}else if(i === 0 && y === 30 ){
+						h1.innerHTML = "Snart kommer David in"
+					}else if(i ===0 && y === 10){
+
+						h1.innerHTML = "SKYYYNDAAAA DIG!!!"
+					}
+					else if(i ===0 && y=== -1){
+						h1.innerHTML = "SLUUUT!!!!!!"
+					}
+
+
+				 },1000);
+		
+
+
+	</script>
+</body>
+</html>
