@@ -25,12 +25,6 @@
 		
 	}
 
-	div{
-		text-align: center;
-		font-size: 5em;
-		color:white;
-		margin:50px;
-	}
 
 	.hej{
 		color:white;
@@ -72,11 +66,33 @@
 		font-size: 2em;
 	}
 
+	h1{
+		margin: 0;
+		font-size: 3em;
+	}
+
+#hej{
+  position: relative;
+  text-align: center;
+  font-size: 2em;
+  background: rgb(100,0,0);
+  height:100px;
+  width: 600px;
+	
+  top:50px;
+  box-shadow: 2px 2px 20px white;
+margin:0 auto;}
+    
+
 		</style>
 	
 </head>
 <body>
 
+	<h1></h1>
+	<div id="hej"></div>
+
+<!--
 	<h2>Hur lång rast vill du ha?</h2>
 
 	<form id="form">
@@ -93,17 +109,69 @@
 		<div id="david">
 
 		</div>
-
+-->
 	<script>
 
+               let prop = prompt("hej")
+ 
 
+        let hej = document.getElementById('hej');
+        let h = document.getElementsByTagName("h1")[0]
+        let min = prop-1;
+
+        let sek = 59;
+                  let pos = 600;
+
+
+        setInterval(function(){
+
+          h.innerHTML = min + ": "+ sek
+
+          if(min===0 && sek===0){
+            min = 0
+            return hej;
+          } if(sek === 0){
+            min--
+          }
+          if(sek ===0){
+            sek=59
+          }  
+          sek--
+
+          		
+
+                  },1000)
+
+
+        let m = prop*100;
+        let l = m/100;
+        let color = 100;
+        console.log(l)
+        setInterval(function(){
+
+          hej.style.width = pos + "px";
+           hej.style.background = "rgb("+Math.round(color)+",0,0)";
+           color+=0.25;
+           console.log(color)
+
+          pos-=1/l;
+
+        },100)
+
+
+/*
 
 		let inn = document.getElementById("lol");
 		let label = document.getElementsByTagName("label")[0];
-		let ny = "";
-		label.addEventListener("click", function(e){
-				ny = inn.value;
-				console.log(ny)
+
+		inn.addEventListener("keypress", function(e){
+
+			console.log(event.key)
+			
+		if(event.key === " "){
+
+			console.log(event.key)
+			let ny = inn.value;
 
 				let h = document.getElementsByTagName("input")[0];
 		
@@ -114,7 +182,6 @@
 
 		let nummer = Number(ny)
 		let i=nummer-1
-		
 		let y = 59;
 			setInterval(function(){ 
 
@@ -162,9 +229,12 @@
 
 
 				 },1000);
-		
 
-		})
+		}
+
+		});
+
+			
 		/*
 		let h = document.getElementsByTagName("input")[0];
 		
