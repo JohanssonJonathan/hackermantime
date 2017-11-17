@@ -12,7 +12,7 @@
 
 		font-family: monospace;
 
-		background: url("hackermantimejonte.png"), #140413;
+		background: url("hackermantimejonte1.png"), #140413;
 		background-position:center;
 		background-size: 100%;
 		background-repeat: no-repeat;
@@ -66,7 +66,12 @@
 		font-size: 2em;
 	}
 
-	h1{
+body{
+	display: flex;
+	flex-direction: column;
+}
+	.h1{
+		padding-top: 100px;
 		margin: 0;
 		font-size: 3em;
 	}
@@ -76,21 +81,44 @@
   text-align: center;
   font-size: 2em;
   background: rgb(100,0,0);
-  height:100px;
+  height:40px;
   width: 600px;
-	
-  top:50px;
-  box-shadow: 2px 2px 20px white;
+  border-radius:20px;
+  box-shadow: 2px 2px 50px red;
+  border:solid 1px black;
 margin:0 auto;}
-    
+
+
+.david{
+	align-self: center;
+display: none;
+}
+.ny{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 
 		</style>
+
 	
 </head>
 <body>
 
-	<h1></h1>
+	<h1 class="h1"></h1>
 	<div id="hej"></div>
+
+	<div class="david">
+	<img src="david.png" >
+	
+	<div class="ny">
+		<img src="thetimeisnow.png" alt="gf">
+	<h1 >Time to CODE!</h1>
+	
+	</div>
+	</div>
 
 <!--
 	<h2>Hur lång rast vill du ha?</h2>
@@ -116,7 +144,8 @@ margin:0 auto;}
  
 
         let hej = document.getElementById('hej');
-        let h = document.getElementsByTagName("h1")[0]
+        let h = document.getElementsByTagName("h1")[0];
+        let im = document.getElementsByClassName("david")[0];
         let min = prop-1;
 
         let sek = 59;
@@ -136,12 +165,16 @@ margin:0 auto;}
           if(sek ===0){
             sek=59
           }  
-          sek--
+          
 
-          		
+          	if(min === 0 && sek < 55){
+          		h.style.color = "red"
+          	}
+          	
+          		sek--
 
                   },1000)
-
+          	
 
         let m = prop*100;
         let l = m/100;
@@ -155,6 +188,10 @@ margin:0 auto;}
            console.log(color)
 
           pos-=1/l;
+
+          if(pos===0){
+          		im.style.display ="flex"
+          	}
 
         },100)
 
