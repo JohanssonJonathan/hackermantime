@@ -158,14 +158,16 @@ display: none;
 
           if(min===0 && sek===0){
             min = 0
+             im.style.display = "flex"
             return hej;
           } if(sek === 0){
             min--
           }
           if(sek ===0){
-            sek=59
+            sek=60
           }  
           
+
 
           	if(min === 0 && sek < 55){
           		h.style.color = "red"
@@ -176,10 +178,12 @@ display: none;
                   },1000)
           	
 
-        let m = prop*100;
-        let l = m/100;
+        //let m = prop*100;
+        //let l = m/100;
+      	let la = prop * 60;
+      	let ha = 600/la
+
         let color = 100;
-        console.log(l)
         setInterval(function(){
 
           hej.style.width = pos + "px";
@@ -187,13 +191,11 @@ display: none;
            color+=0.25;
            console.log(color)
 
-          pos-=1/l;
+         // pos-=1/l;
 
-          if(pos===0){
-          		im.style.display ="flex"
-          	}
+       		pos -= ha
 
-        },100)
+        },1000)
 
 
 /*
